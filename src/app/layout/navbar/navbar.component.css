@@ -1,0 +1,13 @@
+a {
+    cursor: pointer;
+}
+
+.navbar {
+    color: inherit;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-radius: 3px;
+    cursor: pointer;
+}
