@@ -1,0 +1,59 @@
+<div class="wrapper wrapper-full-page">
+  <div class="login-page">
+    <div class="content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
+            <form [formGroup]="form" novalidate (ngSubmit)="onLogin(form.value,form.valid)">
+              <div class="card card-login">
+                <div class="card-content">
+                  <div class="input-group">
+                    <img class="login-logo" src="assets/img/22.png" height="20px" alt="">
+                  </div>
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                      <i class="far fa-envelope"></i>
+                    </span>
+                    <div class="form-group label-floating">
+                      <label class="control-label" for="">Email address
+                        <span class="star">*</span>
+                      </label>
+                      <input type="email" class="form-control offset" formControlName="email" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$">
+                    </div>
+                    <small class="text-center" [hidden]="form.controls.email.valid || (form.controls.email.pristine && !form.submitted)" class="text-danger">
+                      Email is required and must be of valid format.
+                    </small>
+                  </div>
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                      <i class="fa fa-key red-icon" aria-hidden="true"></i>
+                    </span>
+                    <div class="form-group label-floating">
+                      <label for="" class="control-label">Password
+                        <span class="star">*</span>
+                      </label>
+                      <input type="password" class="form-control offset" formControlName="password">
+                    </div>
+                    <small [hidden]="form.controls.password.valid || (form.controls.password.pristine && !form.submitted)" class="text-danger">
+                      Password is required
+                    </small>
+                  </div>
+                  <div class="footer text-center">
+                    <div *ngIf="errorResponse" class="col-md-12">
+                      <small class="text-danger">{{errorResponse}}</small>
+                    </div>
+                    <button type="submit" style="opacity:1" class="btn btn-wd">Login
+                    </button>
+                    <div class="col-md-12">
+                      <a class="link-red font14" [routerLink]="['/forgotpassword']">Forgot  Password</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+.sidebar-normal {
+    cursor: pointer
+}
+.nav li.active>a{
+    background: #f8eef7;
+}

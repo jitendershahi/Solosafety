@@ -1,0 +1,42 @@
+<div class="logo">
+  <div class="logo-normal">
+      <a href="" class="simple-text">
+          <img src="assets/img/22.png" width="30%" alt="">
+      </a>
+  </div>
+</div>
+<div class="sidebar-wrapper">
+  <div class="user">
+      <div class="info">
+          <a data-toggle="collapse" href="#collapseExample" class="collapsed">
+              <span>
+                  Admin
+                  <b class="caret"></b>
+              </span>
+          </a>
+          <div class="collapse" id="collapseExample">
+              <ul class="nav">
+                  <li>
+                      <a>
+                          <i class="material-icons">person</i>
+                          <span [routerLink]="['/admin/profile']" class="sidebar-normal">Profile</span>
+                      </a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </div>
+  <div class="nav-container">
+      <ul class="nav" >
+          <li routerLinkActive="active" [class]="active" *ngFor="let item of menuItems;">
+              <a [routerLink]="[item.path]" class="menu">
+                  <i class="material-icons">{{item.icon }}</i>
+                  <p>{{item.title}}</p>
+              </a>
+          </li>
+
+
+      
+      </ul>
+  </div>
+</div>
