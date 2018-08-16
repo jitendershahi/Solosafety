@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { Routes, RouterModule } from '@angular/router'
 import { BaselayoutComponent } from '@app/layout/baselayout/baselayout.component'
+import { SidebarComponent } from '@app/layout/sidebar/sidebar.component'
+import { NavbarComponent } from '@app/layout/navbar/navbar.component'
 
 export const routes: Routes = [
   {
@@ -25,6 +27,6 @@ export const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
   ],
-  declarations: []
+  declarations: [SidebarComponent, NavbarComponent, BaselayoutComponent]
 })
 export class BaseModule { }

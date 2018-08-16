@@ -15,12 +15,7 @@ export class SidebarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    var isWindows = navigator.platform.indexOf('Win') > -1 ? true : false
-    if (isWindows) {
-      // if we are on windows OS we activate the perfectScrollbar function
-      var sidebar = $('.sidebar-wrapper')
-      sidebar.perfectScrollbar()
-    }
+   
     this.menuItems = SideBarRoute.filter(menuItem => menuItem.user = 'admin')
   }
 

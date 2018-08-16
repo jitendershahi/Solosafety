@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
-import { AuthService } from '@app/services/auth.service'
 
 var misc: any = {
   navbar_menu_visible: 0,
@@ -18,23 +17,10 @@ declare var swal: any
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private router: Router,
-    private authService: AuthService) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
-    if ($('body').hasClass('sidebar-mini')) {
-      misc.sidebar_mini_active = true
-    }
 
-    $('#minimizeSidebar').click(function () {
-      if (misc.sidebar_mini_active == true) {
-        $('body').removeClass('sidebar-mini')
-        misc.sidebar_mini_active = false
-      } else {
-        $('body').addClass('sidebar-mini')
-        misc.sidebar_mini_active = true
-      }
-    })
   }
 
   onLogout() {
@@ -46,7 +32,7 @@ export class NavbarComponent implements OnInit {
       confirmButtonColor: "#e5605b",
       confirmButtonText: "Logout",
     }).then(() => {
-      this.authService.logout()
+      this.router.navigate([''])
     }).catch(swal.noop)
   }
 }
