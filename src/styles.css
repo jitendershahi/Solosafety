@@ -13,3 +13,10 @@
 .btn {
     background-color: #0aa5d2 !important;
 }
+button#minimizeSidebar i {
+    color: #ffff;
+}
+.logo-normal img {
+    width: 73%;
+}
+.login-admin-section{ width:100%;}
